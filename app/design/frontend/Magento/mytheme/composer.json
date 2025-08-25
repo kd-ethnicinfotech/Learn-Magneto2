@@ -1,0 +1,19 @@
+{
+    "name": "magento/mytheme",
+    "description": "Custom Theme",
+    "require": {
+        "php": "^7.3 || ^8.2.29",
+        "magento/mytheme": "*"
+    },
+    "type": "magento2-theme",
+    "version": "1.0.0",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ]
+    }
+}

@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">custom_grid_form.custom_grid_form_data_source</item>
+            <item name="deps" xsi:type="string">custom_grid_form.custom_grid_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Entity Information</item>
+        <item name="config" xsi:type="array">
+            <item name="dataScope" xsi:type="string">data</item>
+            <item name="namespace" xsi:type="string">custom_grid_form</item>
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+        <item name="buttons" xsi:type="array">
+            <item name="back" xsi:type="string">Custom\Grid\Block\Adminhtml\Edit\BackButton</item>
+            <item name="reset" xsi:type="string">Custom\Grid\Block\Adminhtml\Edit\ResetButton</item>
+            <!-- <item name="delete" xsi:type="string">Vendor\Modulename\Block\Adminhtml\Entity\Edit\DeleteButton</item> -->
+            <!-- <item name="save" xsi:type="string">Vendor\Modulename\Block\Adminhtml\Entity\Edit\SaveButton</item> -->
+            <!-- <item name="save_and_continue" xsi:type="string">Vendor\Modulename\Block\Adminhtml\Entity\Edit\SaveAndContinueButton</item> -->
+        </item>
+    </argument>
+    <dataSource name="custom_grid_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Custom\Grid\Ui\DataProvider\FormDataProvider</argument>
+            <argument name="name" xsi:type="string">custom_grid_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
+            <argument name="requestFieldName" xsi:type="string">entity_id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="submit_url" xsi:type="url" path="*/*/save"/>
+                </item>
+            </argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+    <fieldset name="general">
+        <field name="name" formElement="input">
+            <settings>
+                <label translate="true">Name</label>
+                <dataType>text</dataType>
+                <dataScope>name</dataScope>
+            </settings>
+        </field>
+        <field name="address" formElement="input">
+            <settings>
+                <label translate="true">Address</label>
+                <dataType>text</dataType>
+                <dataScope>address</dataScope>
+            </settings>
+        </field>
+        <field name="number" formElement="input">
+            <settings>
+                <label translate="true">Number</label>
+                <dataType>text</dataType>
+                <dataScope>number</dataScope>
+            </settings>
+        </field>
+    </fieldset>
+</form>
+
+
+<!-- <?xml version="1.0"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"
+      name="custom_grid_form">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">custom_grid_form.custom_grid_form_data_source</item>
+            <item name="deps" xsi:type="string">custom_grid_form.custom_grid_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">User Information</item>
+    </argument>
+    <dataSource name="custom_grid_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Custom\Grid\Ui\DataProvider\FormDataProvider</argument>
+            <argument name="name" xsi:type="string">custom_grid_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
+            <argument name="requestFieldName" xsi:type="string">entity_id</argument>
+            
+            <argument name="request" xsi:type="object">Magento\Framework\App\RequestInterface</argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+    <fieldset name="general">
+        <field name="name" formElement="input">
+            <settings>
+                <label translate="true">Name</label>
+                <dataType>text</dataType>
+                <dataScope>name</dataScope>
+            </settings>
+        </field>
+        <field name="address" formElement="input">
+            <settings>
+                <label translate="true">Address</label>
+                <dataType>text</dataType>
+                <dataScope>address</dataScope>
+            </settings>
+        </field>
+        <field name="number" formElement="input">
+            <settings>
+                <label translate="true">Number</label>
+                <dataType>text</dataType>
+                <dataScope>number</dataScope>
+            </settings>
+        </field>
+    </fieldset>
+</form> -->
+
+
+
+
+
+
+
+
+
+

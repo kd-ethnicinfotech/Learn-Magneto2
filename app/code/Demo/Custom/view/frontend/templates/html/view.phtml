@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+   
+
+</head>
+
+<body>
+    <Section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <form id="custom-form" action="<?= $block->getFormAction(); ?>" method="post" name="user">
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label for="validationCustom01" class="form-label font_size">NAME:</label>
+                                <input type="text" class="form-control i-style" id="name" name="name" placeholder="Enter name" aria-label="name">
+                                <p class="error" id="name-error"></p>
+
+                            </div>
+                            <div class="col-12">
+                                <label for="validationCustom02" class="form-label font_size">ADDRESS:</label>
+                                <input type="text" class="form-control i-style" id="address" name="address" placeholder="Enter address" aria-label="address">
+                                <p class="error" id="address-error"></p>
+
+                            </div>
+                            <div class="col-12">
+                                <label for="validationCustom03" class="form-label font_size">NUMBER:</label>
+                                <input type="text" class="form-control i-style" id="number" name="number" placeholder="Enter number" aria-label="number">
+                                <p class="error" id="number-error"></p>
+                            
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary font_size input_style" type="submit">Submit form</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </Section>
+    <script>
+
+       
+        function validation() {
+            const form = document.forms["user"];
+            let isvalid = true;
+
+            document.querySelectorAll(".error").forEach(el => {
+                el.textContent = "";
+            });
+            const name = form["name"].value.trim();
+            if (name === "") {
+                document.getElementById("name-error").textContent = "Employe Name is required.";
+                isvalid = false;
+            }
+            const address = form["address"].value.trim();
+            if (address === "") {
+                document.getElementById("address-error").textContent = "Employe address is required.";
+                isvalid = false;
+            }
+            const number = form["number"].value.trim();
+            if (number === "") {
+                document.getElementById("number-error").textContent = "Employe number is required.";
+                isvalid = false;
+            }
+            return isvalid;
+        }
+        require(['jquery'], function ($) {
+            // Restore saved data on page load
+            $('#name').val(localStorage.getItem('name') || '');
+            $('#address').val(localStorage.getItem('address') || '');
+            $('#number').val(localStorage.getItem('number') || '');
+
+            $('#custom-form').on("submit", function (e) {
+                e.preventDefault();
+
+                if (!validation()) {
+                    return; 
+                }
+
+                // Save to localStorage
+                localStorage.setItem('name', $('#name').val());
+                localStorage.setItem('address', $('#address').val());
+                localStorage.setItem('number', $('#number').val());
+
+                $.ajax({
+                    url: "<?= $block->getFormAction(); ?>",
+                    type: "POST",
+                    data: {
+                        name: $('#name').val(),
+                        address: $('#address').val(),
+                        number: $('#number').val()
+                    },
+                    success: function () {
+                        $('#custom-form')[0].reset();
+                        localStorage.clear(); // Clear after success
+                    }
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>

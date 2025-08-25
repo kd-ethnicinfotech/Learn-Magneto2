@@ -1,0 +1,13 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+/** @var \Training\PluginExample\ViewModel\Example $viewModel */
+$viewModel = $block->getData('view_model');
+$product   = $viewModel ? $viewModel->getCurrentProduct() : null;
+?>
+<?php if ($product): ?>
+    <h1 class="page-title">
+        <span class="base" data-ui-id="page-title-wrapper">
+           <?= $block->escapeHtml($product->getSku()) ?>
+        </span>
+    </h1>
+<?php endif; ?>

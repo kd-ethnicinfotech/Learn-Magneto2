@@ -1,0 +1,11 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column">
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template"
+           name="custom.content"
+           template="Magento_Theme::html/custom-content.phtml"
+           before="-"/>
+        </referenceContainer>
+       
+    </body>
+</page>

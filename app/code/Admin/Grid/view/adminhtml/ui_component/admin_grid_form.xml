@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"
+      name="admin_grid_form">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">admin_grid_form.admin_grid_form_data_source</item>
+            <item name="deps" xsi:type="string">admin_grid_form.admin_grid_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">User Information</item>
+    </argument>
+    <dataSource name="admin_grid_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Admin\Grid\Ui\DataProvider\FormDataProvider</argument>
+            <argument name="name" xsi:type="string">admin_grid_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
+            <argument name="requestFieldName" xsi:type="string">entity_id</argument>
+            <!-- ADD THIS MISSING ARGUMENT -->
+            <argument name="request" xsi:type="object">Magento\Framework\App\RequestInterface</argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+    <fieldset name="general">
+        <field name="name" formElement="input">
+            <settings>
+                <label translate="true">Name</label>
+                <dataType>text</dataType>
+                <dataScope>name</dataScope>
+            </settings>
+        </field>
+        <field name="address" formElement="input">
+            <settings>
+                <label translate="true">Address</label>
+                <dataType>text</dataType>
+                <dataScope>address</dataScope>
+            </settings>
+        </field>
+        <field name="number" formElement="input">
+            <settings>
+                <label translate="true">Number</label>
+                <dataType>text</dataType>
+                <dataScope>number</dataScope>
+            </settings>
+        </field>
+    </fieldset>
+</form>

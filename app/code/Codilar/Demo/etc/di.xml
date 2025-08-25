@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+        <preference for="Codilar\Demo\Api\ProductRepositoryInterface"
+                type="Codilar\Demo\Model\ProductRepository"/>
+        <preference for="Codilar\Demo\Api\Data\ProductInterface"
+            type="Codilar\Demo\Model\Data\Product"/>
+        <preference for="Codilar\Demo\Api\CustomerManagementInterface"
+                type="Codilar\Demo\Model\CustomerManagement"/>
+        <preference for="Codilar\Demo\Api\AdminManagementInterface"
+                type="Codilar\Demo\Model\AdminManagement"/>
+</config>

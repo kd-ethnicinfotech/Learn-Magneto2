@@ -1,0 +1,13 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column">
+    <body>
+        <referenceContainer name="footer_links">
+            <block class="Magento\Framework\View\Element\Template" name="custom-module" ifconfig="demo_custom/general/enable" template="Demo_Custom::html/custom-module.phtml" before="-">
+                <arguments>
+                    <argument name="label" translate="true" xsi:type="string">My_Custom_module</argument>
+                    <argument name="path" xsi:type="string">mycustom/index/index</argument>
+                </arguments>
+            </block>
+            
+        </referenceContainer>
+    </body>
+</page>

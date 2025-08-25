@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Custom_Grid::main_menu" title="Custom_Grid" module="Custom_Grid" sortOrder="10" resource="Custom_Grid::grid"/>
+        <add id="Custom_Grid::grid_list" title="Grid Listing" module="Custom_Grid" sortOrder="20"
+        parent="Custom_Grid::main_menu" action="custom_grid/custom/index" resource="Custom_Grid::grid"/>
+    </menu>
+</config>
