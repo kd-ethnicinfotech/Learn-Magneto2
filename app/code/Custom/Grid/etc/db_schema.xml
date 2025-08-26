@@ -4,6 +4,7 @@
         <column name="entity_id" xsi:type="int" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity ID"/>
         <column name="name" xsi:type="varchar" length="255" nullable="false" comment="Name"/>
         <column name="address" xsi:type="varchar" length="255" nullable="false" comment="Address"/>
+        <column name="zip" xsi:type="bigint" nullable="false" comment="zip"/>
         <column name="number" xsi:type="bigint"  nullable="false" comment="Number"/>
         <column name="created_at" xsi:type="timestamp" nullable="false" default="CURRENT_TIMESTAMP" comment="Created At"/>
         <column name="updated_at" xsi:type="timestamp" nullable="false" default="CURRENT_TIMESTAMP" comment="Updated At"/>

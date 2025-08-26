@@ -43,6 +43,8 @@ class Save extends Action
             // Set form data
             $model->setData('name', $data['name'] ?? '');
             $model->setData('address', $data['address'] ?? '');
+            $model->setData('zip', $data['zip'] ?? '');
+
             $model->setData('number', $data['number'] ?? '');
 
             // Handle timestamps

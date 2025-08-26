@@ -102,6 +102,12 @@
                 <label>Address</label>
             </settings>
         </column>
+        <column name="zip">
+            <settings>
+                <filter>text</filter>
+                <label>Zip</label>
+            </settings>
+        </column>
         <column name="number">
             <settings>
                 <filter>text</filter>
