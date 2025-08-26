@@ -52,6 +52,13 @@
                 <dataScope>address</dataScope>
             </settings>
         </field>
+        <field name="zip" formElement="input">
+            <settings>
+                <label translate="true">Zip</label>
+                <dataType>text</dataType>
+                <dataScope>zip</dataScope>
+            </settings>
+        </field>
         <field name="number" formElement="input">
             <settings>
                 <label translate="true">Number</label>
@@ -61,8 +68,6 @@
         </field>
     </fieldset>
 </form>
-
-
 <!-- <?xml version="1.0"?>
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"
@@ -113,13 +118,3 @@
         </field>
     </fieldset>
 </form> -->
-
-
-
-
-
-
-
-
-
-

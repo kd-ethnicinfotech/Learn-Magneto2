@@ -43,6 +43,7 @@ class FormDataProvider extends AbstractDataProvider
             'entity_id' => '',
             'name'      => '',
             'address'   => '',
+            'zip'   => '',
             'number'    => ''
             ];
         }

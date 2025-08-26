@@ -31,6 +31,15 @@ $formAction = $block->getUrl('custom_grid/custom/save'); // Controller URL
     </div>
 
     <div class="admin__field">
+        <label class="admin__field-label" for="zip"><?= __('Zip') ?></label>
+        <div class="admin__field-control">
+            <input type="text" name="zip" id="zip" class="admin__control-text"
+                   value="<?= $model ? $block->escapeHtml($model->getNumber()) : '' ?>">
+            <p class="error" id="zip-error"></p>
+        </div>
+    </div>
+
+    <div class="admin__field">
         <label class="admin__field-label" for="number"><?= __('Number') ?></label>
         <div class="admin__field-control">
             <input type="text" name="number" id="number" class="admin__control-text"
@@ -60,6 +69,11 @@ $formAction = $block->getUrl('custom_grid/custom/save'); // Controller URL
         const address = form["address"].value.trim();
         if (address === "") {
             document.getElementById("address-error").textContent = " address is required.";
+            isvalid = false;
+        }
+        const zip = form["zip"].value.trim();
+        if (zip === "") {
+            document.getElementById("zip-error").textContent = " zip is required.";
             isvalid = false;
         }
         const number = form["number"].value.trim();
